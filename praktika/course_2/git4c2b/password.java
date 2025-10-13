@@ -111,17 +111,46 @@ public class password {
 
   private static int get_pw_input(Scanner scr) {
     String out = "";
-
     boolean first = true;
-    while (out.length() < 8) {
+
+    while (true) {
       if (!first) {
-        System.out.println("Please enter a valid input (min 8 characters): ");
+        System.out.println("Password must be at least 8 characters long, and include:");
+        System.out.println("- One uppercase letter");
+        System.out.println("- One number");
+        System.out.println("- One special character (*, -, /, etc.)");
       }
+
       out = get_line_input(scr);
       first = false;
+
+      if (is_valid_password(out)) {
+        break;
+      }
     }
 
     return hash_string(out);
+  }
+
+  private static boolean is_valid_password(String pw) {
+    if (pw.length() < 8)
+      return false;
+
+    boolean hasUpper = false;
+    boolean hasNumber = false;
+    boolean hasSpecial = false;
+
+    for (char c : pw.toCharArray()) {
+      if (Character.isUpperCase(c)) {
+        hasUpper = true;
+      } else if (Character.isDigit(c)) {
+        hasNumber = true;
+      } else if (!Character.isLetterOrDigit(c)) {
+        hasSpecial = true;
+      }
+    }
+
+    return hasUpper && hasNumber && hasSpecial;
   }
 
 }
