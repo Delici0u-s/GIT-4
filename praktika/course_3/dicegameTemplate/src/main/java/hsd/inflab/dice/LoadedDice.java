@@ -7,7 +7,7 @@ public class LoadedDice extends Dice {
 
   @Override
   public int roll() {
-    final int min = 0;
+    final int min = 1;
     final int max = 6;
     if (getRandomNumber(0, 1) == 0) {
       return max;

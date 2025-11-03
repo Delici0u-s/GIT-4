@@ -6,13 +6,13 @@ public class ChaosDice extends Dice {
   int upperBound;
 
   public ChaosDice() {
-    this.lowerBound = 0;
+    this.lowerBound = 1;
     this.upperBound = 20;
   }
 
   @Override
   public int roll() {
-    final int min = 0;
+    final int min = 1;
     final int max = 20;
 
     int out = getRandomNumber(this.lowerBound, this.upperBound);
