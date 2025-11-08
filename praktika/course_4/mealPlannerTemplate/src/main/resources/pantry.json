@@ -133,4 +133,31 @@
   "purchaseDate" : "2025-10-21",
   "brand" : "MilchGold",
   "price" : 1.99
+}, {
+  "name" : "s",
+  "unit" : "DL",
+  "amount" : 3.0,
+  "category" : "FRUIT",
+  "expirationDate" : "2025-11-30",
+  "purchaseDate" : "2025-11-08",
+  "brand" : "asd",
+  "price" : 22.0
+}, {
+  "name" : "Test",
+  "unit" : "CL",
+  "amount" : 33.0,
+  "category" : "VEGETABLE",
+  "expirationDate" : "2025-11-10",
+  "purchaseDate" : "2025-11-08",
+  "brand" : "Aldi",
+  "price" : 7.3
+}, {
+  "name" : "asd",
+  "unit" : "DL",
+  "amount" : 2.0,
+  "category" : "MEAT",
+  "expirationDate" : "2025-11-11",
+  "purchaseDate" : "2025-11-08",
+  "brand" : "aldi SIUUUUD",
+  "price" : -3.0
 } ]
