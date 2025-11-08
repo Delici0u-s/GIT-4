@@ -2,23 +2,23 @@ package hsd.inflab.dice;
 
 public class ChaosDice extends Dice {
 
-  int lowerBound;
-  int upperBound;
+  int last_upper_bound;
 
   public ChaosDice() {
-    this.lowerBound = 1;
-    this.upperBound = 20;
+    last_upper_bound = 0;
   }
 
   @Override
   public int roll() {
-    final int min = 1;
+    final int min = 4;
     final int max = 20;
 
-    int out = getRandomNumber(this.lowerBound, this.upperBound);
-    this.lowerBound = getRandomNumber(min, max);
-    this.upperBound = getRandomNumber(this.lowerBound, max);
-    return out;
+    int new_upper_bound;
+    do {
+      new_upper_bound = getRandomNumber(min, max);
+    } while (new_upper_bound == last_upper_bound);
+
+    return getRandomNumber(min, new_upper_bound);
   }
 
 }

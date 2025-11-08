@@ -12,7 +12,7 @@ public class LoadedDice extends Dice {
     if (getRandomNumber(0, 1) == 0) {
       return max;
     }
-    return getRandomNumber(min, max);
+    return getRandomNumber(min, max - 1);
   }
 
 }

@@ -7,13 +7,13 @@ public class Main {
     /* this works as this is intended usage */
     shaker.addDice(new RegularDice());
     /* this works as this is intended usage */
-    shaker.addDice(new MultisidedDice(0, 40)); /* resolves to 4, 20 */
+    shaker.addDice(new MultisidedDice(2));
     /* this works as this is intended usage */
     shaker.addDice(new LoadedDice());
     /* this works as this is intended usage */
     shaker.addDice(new ChaosDice());
 
-    /* This does now work, as Dice is an abstract class */
+    /* This does not work, as Dice is an abstract class */
     // shaker.addDice(new Dice());
 
     /*
@@ -23,6 +23,14 @@ public class Main {
     // LoadedDice ld = new RegularDice();
     /* This would work if ld would exist */
     // shaker.addDice(ld);
+
+    /*
+     * RegularDice dice1 = new Dice();
+     * ChaosDice dice2 = new RegularDice();
+     * MultisidedDice dice3 = new RegularDice();
+     * RegularDice dice4 = new RegularDice();
+     * Dice dice5 = new RegularDice();
+     */
 
     while (true) {
       shaker.throwDice();
